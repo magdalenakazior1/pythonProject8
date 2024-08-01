@@ -69,7 +69,7 @@ ROOT_URLCONF = 'from_gamers_4_gamers.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'from_gamers_4_gamers', 'store', 'templates')],  # Optionally specify a list of directories to search for templates
+        'DIRS': [os.path.join(BASE_DIR, 'store', 'templates', 'store')],  # Optionally specify a list of directories to search for templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
