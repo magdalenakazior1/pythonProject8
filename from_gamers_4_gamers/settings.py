@@ -69,7 +69,7 @@ ROOT_URLCONF = 'from_gamers_4_gamers.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],  # Optionally specify a list of directories to search for templates
+        'DIRS': [os.path.join(BASE_DIR, 'from_gamers_4_gamers', 'store', 'templates')],  # Optionally specify a list of directories to search for templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -93,9 +93,9 @@ WSGI_APPLICATION = 'from_gamers_4_gamers.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'from_gamers_4_gamers',
+        'NAME': 'ecommerce_db',
         'USER': 'root',
-        'PASSWORD': '12345',
+        'PASSWORD': 'KochamyKotki123',
         'HOST': 'localhost',
         'PORT': '3306',
     }
