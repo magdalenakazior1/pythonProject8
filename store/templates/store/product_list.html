@@ -1,0 +1,46 @@
+{% extends 'base.html' %}  <!-- Assuming you have a base template -->
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'products' %}">Products</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Product List</h1>
+        <section class="product-grid">
+            {% for product in products %}
+                <article class="product-card">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                        <img src="{% static 'images/default_image.jpg' %}" alt="Default Image">
+                    {% endif %}
+                    <h2>{{ product.name }}</h2>
+                    <p>{{ product.description }}</p>
+                    <p class="price">${{ product.price }}</p>
+                </article>
+            {% empty %}
+                <p>No products available.</p>
+            {% endfor %}
+        </section>
+    </main>
+    <footer>
+        <p>&copy; {{ current_year }} Your Company</p>
+    </footer>
+</body>
+</html>
+{% endblock %}

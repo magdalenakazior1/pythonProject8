@@ -1,0 +1,31 @@
+<!-- store/templates/store/order_confirmation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - From Gamers 4 Gamers</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'store/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Order Confirmation</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'store:home' %}">Home</a></li>
+                <li><a href="{% url 'store:product_list' %}">Products</a></li>
+                <li><a href="{% url 'store:cart_detail' %}">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Thank you for your order!</h2>
+        <p>Your order number is {{ order.id }}.</p>
+        <p>We will notify you when your items are shipped.</p>
+    </main>
+    <footer>
+        <p>&copy; Magdalena and Jakub project 2024 SDA. All rights reserved.</p>
+    </footer>
+</body>
+</html>
